@@ -32,7 +32,20 @@
 				<a href="/#!/signin">Sign In</a>
 			</li>
 		</ul>
-		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
+
+
+        <ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
+            <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search ng-valid ng-dirty ng-submitted"
+                  ng-submit="submit()">
+                <span class="glyphicon glyphicon-search search-icon"></span>
+                <input type="text" name="as_q" class="search-query ng-valid ng-dirty ng-touched"
+                       placeholder="Click or press / to search" ng-focus="focus=true" ng-blur="focus=false"
+                       ng-change="search(q)" ng-model="q" docs-search-input="" autocomplete="off">
+            </form>
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					<span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
