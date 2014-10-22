@@ -6,11 +6,11 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a href="/#!/" class="navbar-brand">MEAN.JS</a>
+		<a href="/#!/" class="navbar-brand">BEX.Luxoft</a>
 	</div>
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 
-        <ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
+        <!--ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
         <li data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ng-switch="item.menuItemType" ui-route="{{item.uiRoute}}" class="{{item.menuItemClass}}" ng-class="{active: ($uiRoute)}" dropdown="item.menuItemType === 'dropdown'">
 				<a ng-switch-when="dropdown" class="dropdown-toggle">
 					<span data-ng-bind="item.title"></span>
@@ -23,7 +23,7 @@
 				</ul>
 				<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>
 			</li>
-		</ul>
+		</ul-->
 
 
         <ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
@@ -46,9 +46,9 @@
 					<li>
 						<a href="/#!/settings/profile">Edit Profile</a>
 					</li>
-					<li>
+					<!--li>
 						<a href="/#!/settings/accounts">Manage Social Accounts</a>
-					</li>
+					</li-->
 					<li data-ng-show="authentication.user.provider === 'local'">
 						<a href="/#!/settings/password">Change Password</a>
 					</li>
@@ -60,7 +60,7 @@
 			</li>
 		</ul>
 
-        <ul class="nav navbar-nav navbar-right" data-ng-controller="SearchCtrl">
+        <ul class="nav navbar-nav navbar-right" data-ng-controller="SearchCtrl" ng-if="authentication.user">
             <div>
                 <form class="navbar-form" role="search">
                     <div class="input-group">
