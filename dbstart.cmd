@@ -1,0 +1,1 @@
+call w:\work\expz\mongo\bin\mongod.exe --dbpath w:\work\expz\bex\data\db\
